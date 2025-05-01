@@ -1,5 +1,7 @@
 #include <iostream>
-// Backup 6
+// Backup 7
+// Somar mais 3 números
+// while (sinal != 's');// final do Loop
 // Função Adição
 float soma(float a, float b){
     return a+b; }
@@ -28,14 +30,6 @@ float fatoracao(float a){
         
     return result; }
     
-// Calculo Cosseno ATENÇÂO
-float cosseno(float b){
-    return 1; }
-    
-// Calculo tanegente ATENÇÂO
-float tangente(float b){
-    return 1; }
-    
 // Calculo Potência
 float potencia(float base, float expoente){
     float result = 1;
@@ -48,83 +42,96 @@ float potencia(float base, float expoente){
         result *= base; }
 
     return result; }
+    
+// Calculo Cosseno ATENÇÂO
+float cosseno(float b){
+    return 1; }
+    
+// Calculo tanegente ATENÇÂO
+float tangente(float b){
+    return 1; }
 
 // Escolhas no Switch Case
 int main() {
     int opcao;
-        float n1, n2;
+        float n1 = 0, n2;
         char sinal;
-        printf ("Olá usuario, vamos começar!\n\n");
-        printf ("Menu de opções:");
-        printf ("\n- (x + y) Adição");
-        printf ("\n- (x - y) Subtração");
-        printf ("\n- (x * y) Multiplicação");
-        printf ("\n- (x / y) Divisão");
-        printf ("\n- (x % y) Porcentagem");
-        printf ("\n- (x ^ y) Potência");
-        printf ("\n- ( x ! ) Fatorial");
-        printf ("\n- ( c x°) Cosseno");
-        printf ("\n- ( t x°) Tangente");
-        printf ("\n- ( s 0 ) Sair\n\n");
+        printf ("CALCULADORA EM C++\n");
+        printf ("Algoritmos e Tecnologia de Programção\n\n");
+        printf ("Desenvolvedores: Ithalo Daniel, Pedro H. Ribeiro, Yuna Vitória.\n\n");
+        printf ("============+=+============\n");
+        printf ("| Menu de opções:         |\n");
+        printf ("| - (x + y) Adição        |\n");
+        printf ("| - (x - y) Subtração     |\n");
+        printf ("| - (x * y) Multiplicação |\n");
+        printf ("| - (x / y) Divisão       |\n");
+        printf ("| - (x % y) Porcentagem   |\n");
+        printf ("| - (x ^ y) Potência      |\n");
+        printf ("| - ( x ! ) Fatorial      |\n");
+        printf ("| - ( x c ) Cosseno       |\n");
+        printf ("| - ( x t ) Tangente      |\n");
+        printf ("| - ( i ) Iniciar         |\n");
+        printf ("| - ( s ) Sair            |\n");
+        printf ("============+=+============\n");
+        printf ("\nIniciar ou Sair? ");
+        scanf (" %s", &sinal);
         
-    for (int k=0; k<1; k++) {
-            printf ("Digite o cálculo: ");
-           
-            scanf (" %f", &n1);
-        }
-   do {
-    scanf (" %c %f", &sinal, &n2);
+    if (sinal == 'i') { // Aceita apenas i para iniciar
+    while (sinal != 's')  {
+        printf ("\nVisor: %.0f", n1); 
+        
+        if (n1 == 0) { //Obtem o 1° Número
+        printf ("\nCalculadora: ");
+        scanf (" %f", &n1);
+        };
+        
+        scanf (" %c", &sinal);
+        
+        // Verifica se não digitou s, c ou t
+        if (sinal != 's' && sinal != 'c' && sinal != 't') { scanf (" %f", &n2); } 
+        
+    if (sinal != 's') { //Roda o Switch se usuario não digitar s
     switch (sinal) { // Verificador de sinal
         case '+':
             n1 = soma(n1, n2);
-            printf ("Resultado: %.2f\n", n1);
             break;
         case '-':
             n1 = subtracao(n1, n2);
-            printf ("Resultado: %.2f\n", n1);
             break;
         case '*':
         case 'x':
             n1 = multiplicacao(n1, n2);
-            printf ("Resultado: %.2f\n", n1);
             break;
         case ':':
         case '/':
         case '\\':
             n1 = divisao(n1, n2);
-            printf ("Resultado: %.2f\n", n1);
             break;
         case '^':
         case '~':
             n1 = potencia(n1, n2);
-            printf ("Resultado: %.2f\n", n1);
             break;
         case '%':
             n1 = porcentagem(n1, n2);
-            printf ("Resultado: %.2f%%\n", n1);
             break;
         case '!':
             n1 = fatoracao(n1);
-            printf ("Resultado: %.2f\n", n1);
             break;
         // Programar ATENÇÃO
         case 'c':
             n1 = cosseno(n2);
-            printf ("cos(%.0f°) Resultado: %.2f\n", n2, n1);
+            printf ("cos(%.0f°)", n2, n1);
             break;
         // Programar ATENÇÃO
         case 't':
             n1 = tangente(n2);
-            printf ("tan(%.0f°) Resultado: %.2f\n", n2, n1);
-            break;
-        case 's':
-            printf ("Saindo do programa.\n");
-            break;
-        default:
-            printf ("Opção inválida.\n");
+            printf ("tan(%.0f°)", n2, n1);
             break;
     } // final do Case
-            printf ("\nDigite o cálculo: %.2f ",n1);
-    }  while (sinal != 's');// final do Loop
+    } // final do if2
+    } // final do while
+    } // final do if1
+    
+    printf ("Saindo do programa.\n");
     return 0;
 }
