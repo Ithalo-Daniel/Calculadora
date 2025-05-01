@@ -52,7 +52,7 @@ float potencia(float base, float expoente){
 // Escolhas no Switch Case
 int main() {
     int opcao;
-        float n1, n2, s;
+        float n1, n2;
         char sinal;
         printf ("Olá usuario, vamos começar!\n\n");
         printf ("Menu de opções:");
@@ -65,20 +65,15 @@ int main() {
         printf ("\n- ( x ! ) Fatorial");
         printf ("\n- ( c x°) Cosseno");
         printf ("\n- ( t x°) Tangente");
-        printf ("\n- ( s ) Sair\n\n");
-    
-    do {
-        //Lê o primeiro número apenas uma vez
-        for (int j=0; j<1; j++) { 
+        printf ("\n- ( s 0 ) Sair\n\n");
+        
+    for (int k=0; k<1; k++) {
             printf ("Digite o cálculo: ");
-            scanf (" %f", &n1, j+1);
-            printf ("\nContador: %d\n", j);
+           
+            scanf (" %f", &n1);
         }
-        
-        scanf (" %c %f", &sinal, &n2);
-    
-        
-
+   do {
+    scanf (" %c %f", &sinal, &n2);
     switch (sinal) { // Verificador de sinal
         case '+':
             n1 = soma(n1, n2);
@@ -129,6 +124,7 @@ int main() {
             printf ("Opção inválida.\n");
             break;
     } // final do Case
-    } while (sinal != s); // final do Loop
+            printf ("\nDigite o cálculo: %.2f ",n1);
+    }  while (sinal != 's');// final do Loop
     return 0;
 }
