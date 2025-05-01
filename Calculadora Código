@@ -1,5 +1,5 @@
 #include <iostream>
-// Backup 7
+// Backup 8
 // Somar mais 3 números
 // while (sinal != 's');// final do Loop
 // Função Adição
@@ -44,11 +44,12 @@ float potencia(float base, float expoente){
     return result; }
     
 // Calculo Cosseno ATENÇÂO
-float cosseno(float b){
+float cosseno(float a){
+    cos
     return 1; }
     
 // Calculo tanegente ATENÇÂO
-float tangente(float b){
+float tangente(float a){
     return 1; }
 
 // Escolhas no Switch Case
@@ -68,15 +69,18 @@ int main() {
         printf ("| - (x % y) Porcentagem   |\n");
         printf ("| - (x ^ y) Potência      |\n");
         printf ("| - ( x ! ) Fatorial      |\n");
-        printf ("| - ( x c ) Cosseno       |\n");
-        printf ("| - ( x t ) Tangente      |\n");
+        printf ("| - ( c ) Cosseno         |\n");
+        printf ("| - ( t ) Tangente        |\n");
         printf ("| - ( i ) Iniciar         |\n");
+        printf ("| - ( l ) Limpar          |\n");
         printf ("| - ( s ) Sair            |\n");
         printf ("============+=+============\n");
         printf ("\nIniciar ou Sair? ");
         scanf (" %s", &sinal);
         
-    if (sinal == 'i') { // Aceita apenas i para iniciar
+    if (sinal == 'i') {
+        // if1 Aceita apenas i para iniciar
+        
     while (sinal != 's')  {
         printf ("\nVisor: %.0f", n1); 
         
@@ -88,7 +92,9 @@ int main() {
         scanf (" %c", &sinal);
         
         // Verifica se não digitou s, c ou t
-        if (sinal != 's' && sinal != 'c' && sinal != 't') { scanf (" %f", &n2); } 
+        if (sinal != 's' && sinal != 'c' && sinal != 't' && sinal != 'l') {
+            scanf (" %f", &n2);
+        } 
         
     if (sinal != 's') { //Roda o Switch se usuario não digitar s
     switch (sinal) { // Verificador de sinal
@@ -119,13 +125,20 @@ int main() {
             break;
         // Programar ATENÇÃO
         case 'c':
-            n1 = cosseno(n2);
-            printf ("cos(%.0f°)", n2, n1);
+            printf ("\nLimpando Visor...");
+            printf ("\nPreparando Cálculo Para Radianos...");
+            printf ("\nInsira cos(x): ");
+            scanf (" %f", &n1);
+            n1 = cosseno(n1);
             break;
         // Programar ATENÇÃO
         case 't':
             n1 = tangente(n2);
             printf ("tan(%.0f°)", n2, n1);
+            break;
+        case 'l':
+            printf ("\nLimpando Visor...");
+            n1 = 0;
             break;
     } // final do Case
     } // final do if2
