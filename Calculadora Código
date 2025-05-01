@@ -1,5 +1,5 @@
 #include <iostream>
-// Backup 8
+// Backup 7
 // Somar mais 3 números
 // while (sinal != 's');// final do Loop
 // Função Adição
@@ -78,10 +78,9 @@ int main() {
         printf ("\nIniciar ou Sair? ");
         scanf (" %s", &sinal);
         
-    if (sinal == 'i') {
-        // if1 Aceita apenas i para iniciar
+    if (sinal == 'i') {// if1 Inicia apenas com i
         
-    while (sinal != 's')  {
+    while (sinal != 's')  { // Roda o Loop se não for s
         printf ("\nVisor: %.0f", n1); 
         
         if (n1 == 0) { //Obtem o 1° Número
@@ -96,7 +95,7 @@ int main() {
             scanf (" %f", &n2);
         } 
         
-    if (sinal != 's') { //Roda o Switch se usuario não digitar s
+    if (sinal != 's') { //Roda o Switch se não for s
     switch (sinal) { // Verificador de sinal
         case '+':
             n1 = soma(n1, n2);
