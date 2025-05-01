@@ -1,0 +1,65 @@
+#include <iostream>
+//Salvando 1º Vez
+// Função Soma
+float soma(float a, float b){
+    return a+b; }
+
+// Calculo Subtração
+float subtracao(float a, float b){
+    return a-b; }
+    
+// Função Multiplicação
+float multiplicacao(float a, float b){
+    return a*b; }
+
+// Calculo Divisão
+float divisao(float a, float b){
+    return a/b; }
+
+// Calculo Divisão
+float potencia(float a, float b){
+    for (int i=0; i < b; i++){
+        a *= a;
+    }
+    return 1; }
+
+// Escolhas no Switch Case
+int main() {
+    int opcao;
+        float n1, n2;
+        char sinal;
+        printf ("Olá usuario, vamos começar!\n\n");
+        printf ("Digite um número: ");
+        scanf ("%f %c %f", &n1, &sinal, &n2);
+    
+    switch (sinal) {
+        case '+':
+            n1 = soma(n1, n2);
+            printf ("Resultado: %.2f\n", n1);
+            break;
+        case '-':
+            n1 = subtracao(n1, n2);
+            printf ("Resultado: %.2f\n", n1);
+            break;
+        case '*':
+        case 'x':
+            n1 = multiplicacao(n1, n2);
+            printf ("Resultado: %.2f\n", n1);
+            break;
+        case '/':
+            n1 = divisao(n1, n2);
+            printf ("Resultado: %.2f\n", n1);
+            break;
+        case '^':
+            n1 = potencia(n1, n2);
+            printf ("Resultado: %.2f\n", n1);
+            break;
+        // Com problema
+        case 123:
+            printf ("Saindo do programa.\n");
+            break;
+        default:
+            printf ("Opção inválida.\n");
+    }
+    return 0;
+}
