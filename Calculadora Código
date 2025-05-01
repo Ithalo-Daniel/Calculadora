@@ -1,5 +1,5 @@
 #include <iostream>
-//Salvando 1º Vez
+// Salvando pela 2? vez;
 // Função Soma
 float soma(float a, float b){
     return a+b; }
@@ -16,10 +16,20 @@ float multiplicacao(float a, float b){
 float divisao(float a, float b){
     return a/b; }
 
-// Calculo Divisão
+// Calculo Potência
 float potencia(float a, float b){
-    for (int i=0; i < b; i++){
-        a *= a;
+    float result = 1;
+        for (int i=0; i < b; i++) {
+        result *= a; 
+        printf ("Teste %dº: %.0f\n", i, result);
+        }
+    return result; }
+    
+    // Calculo Potência
+float fatoracao(float a, float b){
+    for (int i=a; i > 0; i--){
+        a *= i;
+        printf ("Teste %dº: %.0f\n", i, a);
     }
     return 1; }
 
@@ -30,7 +40,7 @@ int main() {
         char sinal;
         printf ("Olá usuario, vamos começar!\n\n");
         printf ("Digite um número: ");
-        scanf ("%f %c %f", &n1, &sinal, &n2);
+        scanf ("%f  %c %f", &n1, &sinal, &n2);
     
     switch (sinal) {
         case '+':
