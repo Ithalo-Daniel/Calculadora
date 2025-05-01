@@ -1,5 +1,5 @@
 #include <iostream>
-//Backup 5
+// Backup 6
 // Função Adição
 float soma(float a, float b){
     return a+b; }
