@@ -1,7 +1,8 @@
 #include <iostream>
-// Backup 8
+// Backup 9
 // Somar mais 3 números
-
+// Falta só concertar detalhes até aqui foram 20 horas programando de (1 dia e 4horas)
+// while (sinal != 's');// final do Loop
 // Função Adição
 float soma(float a, float b){
     return a+b; }
@@ -60,9 +61,22 @@ float cosseno(float a){
     
     return result; }
     
-// Calculo tanegente ATENÇÂO
-float tangente(float a){
-    return 1; }
+// Calculo Seno ATENÇÂO
+float seno(float a){
+    float x, y, z, result = a / 1;
+    int numerador = 3, sinal = 1;
+    
+    for (int i=0; i <1; i++) {
+    x = potencia (a, numerador); //Calcula a potencia apartir do expoente 2
+    y = fatoracao (numerador); //Calcula o fatorial apartir do 2
+    z = x/y; //Calcula potencia dividido pelo fatorial
+    
+    numerador += 2; // Aumenta infinitamente +2
+    sinal *= -1; // Troca o sinal entre + e -
+    result += (sinal * z); // resultado mais/menos o proximo resultado;
+    }
+    
+    return result; }
 
 // Escolhas no Switch Case
 int main() {
@@ -82,17 +96,17 @@ int main() {
         printf ("| - (x ^ y) Potência      |\n");
         printf ("| - ( x ! ) Fatorial      |\n");
         printf ("| - ( c ) Cosseno         |\n");
-        printf ("| - ( t ) Tangente        |\n");
+        printf ("| - ( s ) Seno            |\n");
         printf ("| - ( i ) Iniciar         |\n");
         printf ("| - ( l ) Limpar          |\n");
-        printf ("| - ( s ) Sair            |\n");
+        printf ("| - ( e ) Encerrar        |\n");
         printf ("============+=+============\n");
         printf ("\nIniciar ou Sair? ");
         scanf (" %s", &sinal);
         
     if (sinal == 'i') {// if1 Inicia apenas com i
         
-    while (sinal != 's')  { // Roda o Loop se não for s
+    while (sinal != 'e')  { // Roda o Loop se não for s
         printf ("\nVisor: %g", n1); 
         
         if (n1 == 0) { //Obtem o 1° Número
@@ -103,11 +117,12 @@ int main() {
         scanf (" %c", &sinal);
         
         // Verifica se não digitou s, c ou t
-        if (sinal != 's' && sinal != 'c' && sinal != 't' && sinal != 'l') {
+        if (sinal != 'e' && sinal != 'c' && sinal != 's' && sinal != 'l') {
             scanf (" %f", &n2);
         } 
         
-    if (sinal != 's') { //Roda o Switch se não for s
+    
+    if (sinal != 'e') { //Roda o Switch se não for s
     switch (sinal) { // Verificador de sinal
         case '+':
             n1 = soma(n1, n2);
@@ -143,19 +158,25 @@ int main() {
             n1 = cosseno(n1);
             break;
         // Programar ATENÇÃO
-        case 't':
-            n1 = tangente(n2);
-            printf ("tan(%.0f°)", n2, n1);
+        case 's':
+            printf ("\nLimpando Visor...");
+            printf ("\nPreparando Cálculo Para Radianos...");
+            printf ("\nInsira sen(x): ");
+            scanf (" %f", &n1);
+            n1 = seno(n1);
             break;
         case 'l':
             printf ("\nLimpando Visor...");
             n1 = 0;
             break;
-    } // final do Case
+        default : // Nenhuma opção selecionada
+            printf ("\nErro, tente novamente!");
+            break;
+    } // final do Switch
     } // final do if2
     } // final do while
     } // final do if1
     
-    printf ("Saindo do programa.\n");
+        printf ("Finalizando programa...\n");
     return 0;
 }
