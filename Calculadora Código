@@ -1,7 +1,7 @@
 #include <iostream>
-// Backup 7
+// Backup 8
 // Somar mais 3 números
-// while (sinal != 's');// final do Loop
+
 // Função Adição
 float soma(float a, float b){
     return a+b; }
@@ -36,7 +36,7 @@ float potencia(float base, float expoente){
     
     if (expoente < 0) { // Expoente negativo
         base = 1 / base; // Inverte a base
-        expoente = -expoente; } // Expoente vira positivo;
+        expoente = -expoente; } // Expoente vira positivo
     
     for (int i=0; i < expoente; i++) {
         result *= base; }
@@ -45,8 +45,20 @@ float potencia(float base, float expoente){
     
 // Calculo Cosseno ATENÇÂO
 float cosseno(float a){
-    cos
-    return 1; }
+    float x, y, z, result =1;
+    int numerador = 2, sinal = 1;
+    
+    for (int i=0; i <6; i++) {
+    x = potencia (a, numerador); //Calcula a potencia apartir do expoente 2
+    y = fatoracao (numerador); //Calcula o fatorial apartir do 2
+    z = x/y; //Calcula potencia dividido pelo fatorial
+    
+    numerador += 2; // Aumenta infinitamente +2
+    sinal *= -1; // Troca o sinal entre + e -
+    result += (sinal * z); // resultado mais/menos o proximo resultado;
+    }
+    
+    return result; }
     
 // Calculo tanegente ATENÇÂO
 float tangente(float a){
@@ -81,7 +93,7 @@ int main() {
     if (sinal == 'i') {// if1 Inicia apenas com i
         
     while (sinal != 's')  { // Roda o Loop se não for s
-        printf ("\nVisor: %.0f", n1); 
+        printf ("\nVisor: %g", n1); 
         
         if (n1 == 0) { //Obtem o 1° Número
         printf ("\nCalculadora: ");
