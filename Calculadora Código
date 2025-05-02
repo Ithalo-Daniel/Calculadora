@@ -1,7 +1,6 @@
 #include <iostream>
-// Backup 9
+// Backup 7
 // Somar mais 3 números
-// Falta só concertar detalhes até aqui foram 20 horas programando de (1 dia e 4horas)
 // while (sinal != 's');// final do Loop
 // Função Adição
 float soma(float a, float b){
@@ -172,7 +171,7 @@ int main() {
         default : // Nenhuma opção selecionada
             printf ("\nErro, tente novamente!");
             break;
-    } // final do Switch
+    } // final do Case
     } // final do if2
     } // final do while
     } // final do if1
