@@ -23,16 +23,16 @@ float porcentagem(float a, float b){
     return a/100*b; }
 
 // Calculo Fatoração
-float fatoracao(float a){
-    float result = 1;
+double fatoracao(float a){
+    double result = 1;
     for (int i=a; i > 0; i--){
         result *= i; }
         
     return result; }
     
 // Calculo Potência
-float potencia(float base, float expoente){
-    float result = 1;
+double potencia(float base, float expoente){
+    double result = 1;
     
     if (expoente < 0) { // Expoente negativo
         base = 1 / base; // Inverte a base
@@ -44,11 +44,11 @@ float potencia(float base, float expoente){
     return result; }
     
 // Calculo Cosseno ATENÇÂO
-float cosseno(float a){
-    float x, y, z, result =1;
+double cosseno(float a){
+    double x, y, z, result =1;
     int numerador = 2, sinal = 1;
     
-    for (int i=0; i <6; i++) {
+    for (int i=0; i <20; i++) {
     x = potencia (a, numerador); //Calcula a potencia apartir do expoente 2
     y = fatoracao (numerador); //Calcula o fatorial apartir do 2
     z = x/y; //Calcula potencia dividido pelo fatorial
@@ -61,11 +61,11 @@ float cosseno(float a){
     return result; }
     
 // Calculo Seno ATENÇÂO
-float seno(float a){
-    float x, y, z, result = a / 1;
+double seno(float a){
+    double x, y, z, result = a;
     int numerador = 3, sinal = 1;
     
-    for (int i=0; i <1; i++) {
+    for (int i=0; i <20; i++) {
     x = potencia (a, numerador); //Calcula a potencia apartir do expoente 2
     y = fatoracao (numerador); //Calcula o fatorial apartir do 2
     z = x/y; //Calcula potencia dividido pelo fatorial
@@ -100,6 +100,7 @@ int main() {
         printf ("| - ( l ) Limpar          |\n");
         printf ("| - ( e ) Encerrar        |\n");
         printf ("============+=+============\n");
+    
         printf ("\nIniciar ou Sair? ");
         scanf (" %c", &sinal);
         
@@ -136,6 +137,9 @@ int main() {
         case ':':
         case '/':
         case '\\':
+            if (n2 == 0) {
+                printf("Erro: Divisão por zero!\n"); break; }
+
             n1 = divisao(n1, n2);
             break;
         case '^':
