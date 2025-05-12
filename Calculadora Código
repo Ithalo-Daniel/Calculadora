@@ -101,7 +101,7 @@ int main() {
         printf ("| - ( e ) Encerrar        |\n");
         printf ("============+=+============\n");
         printf ("\nIniciar ou Sair? ");
-        scanf (" %s", &sinal);
+        scanf (" %c", &sinal);
         
     if (sinal == 'i') {// if1 Inicia apenas com i
         
@@ -116,7 +116,7 @@ int main() {
         scanf (" %c", &sinal);
         
         // Verifica se não digitou s, c ou t
-        if (sinal != 'e' && sinal != 'c' && sinal != 's' && sinal != 'l') {
+        if (sinal != 'e' && sinal != 'c' && sinal != 's' && sinal != 'l' && sinal != '!') {
             scanf (" %f", &n2);
         } 
         
